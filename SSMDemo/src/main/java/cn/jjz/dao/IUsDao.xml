@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.jjz.dao.IUsDao">
+    <!-- 登陆-->
+    <select id="Login" resultType="Us">
+        select *  from S_UserInfo where s_upwd=#{s_upwd} and s_uacc=#{s_uacc}
+    </select>
+    <select id="queryAllUser" resultType="Us">
+        select * from S_UserInfo
+    </select>
+    <select id="ByAccSelectUs" resultType="Us">
+        SELECT * FROM s_userinfo WHERE s_uacc=#{s_uacc}
+    </select>
+    <update id="UpUser">
+        UPDATE s_userinfo SET
+        <if test="s_uname !=null">
+            s_uname=#{s_uname}
+        </if>
+        <if test="s_upwd !=null">
+            s_upwd=#{s_upwd}
+        </if>
+        <if test="s_uacc !=null">
+            s_uacc=#{s_uacc}
+        </if>
+        <if test="s_uphone !=null">
+            s_uphone=#{s_uphone}
+        </if>
+        <if test="s_uemail !=null">
+            s_uemail=#{s_uemail}
+        </if>
+        <where>
+            s_uid=#{s_uid}
+        </where>
+    </update>
+
+</mapper>

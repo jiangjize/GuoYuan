@@ -1,0 +1,5 @@
+.slideTxtBox{position: relative;}
+.slideTxtBox .hd ul li{height: 32px; margin-top: 6px; font-size: 1.4rem; line-height: 31px; padding: 0 15px; color: #7c7c7c;}
+.slideTxtBox .hd ul li.on{height: 32px; margin-top: 6px; background: #c92826; color: #fff; border-bottom: 0; font-size: 1.4rem; line-height: 31px; border-radius: 3px; padding: 0 15px;}
+.slideTxtBox .hd ul{left: 65px; top:-42px}
+.slideTxtBox .hd{height: auto;}

@@ -1,0 +1,23 @@
+form{width: 540px; margin: 0 auto;}
+form p{margin-top: 15px;}
+form p span{width: 148px;height: 28px; line-height: 28px; display: inline-block; text-align: right; font-size: 1.4rem; color: #333;}
+form p select{width: 270px; height: 28px; line-height: 28px; border: 1px #bdbdbd solid; padding-left: 10px;}
+form p input[type=text],[type=password]{width: 270px; height: 28px; line-height: 28px; border: 1px #bdbdbd solid; padding-left: 10px;}
+form p.code input[type=text]{width: 140px; height: 28px; line-height: 28px; border: 1px #bdbdbd solid; padding-left: 10px;}
+form p.code button{width: 100px; height: 28px; margin-left: 20px; color: #fff;  background: #c92826; border: 0; cursor: pointer;}
+
+.margin-tb-55{margin: 55px 0px;}
+#tishi-p{width: 300px; margin: 0px auto; margin-left: 44%;}
+/*邮箱找回密码*/
+.forgotNoticeDiv{ 
+    background: -webkit-linear-gradient(#e5e4e4, #fdfdfd); /* Safari 5.1 - 6.0 */
+ 	background: -o-linear-gradient(#e5e4e4, #fdfdfd); /* Opera 11.1 - 12.0 */
+    background: -moz-linear-gradient(#e5e4e4, #fdfdfd); /* Firefox 3.6 - 15 */
+    background: linear-gradient(#e5e4e4, #fdfdfd); /* 标准的语法 */
+    padding-bottom: 5%; 
+    border-radius: 15px;
+    box-shadow: 0 0 10px #ccc;}
+.forgotNoticeDiv h3{font-size: 1.8rem; color: #929292;}
+.forgotNoticeDiv h2{font-size: 1.8rem; width: 25%; background-color: #f1f0f0; height: 40px; line-height: 40px; margin-left: 38.5%;}
+.emailtishi{ margin: -10px 0px; font-size: 1.3rem; color: #a53158;}
+#emailhr{border-bottom: 1px #b2b3b2 solid;}

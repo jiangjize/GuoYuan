@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.jjz.dao.IRPDao">
+
+    <select id="GetAllInfo" resultType="IRP">
+        select * from s_role_power
+    </select>
+    <delete id="DeletePower" parameterType="IRP">
+        DELETE FROM s_role_power WHERE s_rid=#{s_rid} and s_pid=#{s_pid}
+    </delete>
+
+    <insert id="AddPower" parameterType="IRP">
+        INSERT INTO s_role_power(s_rid,s_pid) VALUE(#{s_rid},#{s_pid})
+
+    </insert>
+</mapper>

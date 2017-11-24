@@ -1,0 +1,31 @@
+/*投资咨询*/
+.invest-img img{ width: 100%;}
+.pt-title{width: 100%; height: 35px; line-height: 35px; padding-left: 10px; font-size: 1.4rem; color: #333; background:url(../images/customReport/tiao.jpg) repeat;}
+.serve-pt ul{text-align: left; padding: 20px;}
+.serve-pt ul li{background:url(../images/customReport/icon.png) no-repeat;text-indent: 40px; font-size: 1.4rem; margin-bottom:10px;color: #666;}
+.serve-pt ul .icon-1{background-position: 0 0; height: 27px;}
+.serve-pt ul .icon-2{background-position: 0 -25px; height: 23px;}
+.serve-pt ul .icon-3{background-position: 0 -47px; height: 26px;}
+.serve-pt ul .icon-4{background-position: 0 -72px; height: 18px;}
+.serve-pt ul .icon-5{background-position: 0 -89px; height: 25px;}
+.serve-pt ul .icon-6{background-position: 0 -112px; height: 20px;}
+
+.content-news-title{width: 100%; height: 27px; background:url(../images/investInfo/invest-tiao_03.jpg) repeat;}
+span#invest-title{font-size: 1.4rem; line-height: 27px; color: #333333; text-align: center; margin-left: 15px;}
+p#content-news-con-p,p#checkAll,p#content-state-con-p,p#content-market-con-p{color: #666; font-size: 1.2rem; line-height: 20px; margin-top: -5px; padding-right: 6px; overflow : hidden; text-overflow: ellipsis;display: -webkit-box;-webkit-line-clamp: 3;-webkit-box-orient: vertical;}
+
+/*投资咨询-产业规划*/
+.content-plann-con-up{ border-bottom: 1px #E2E2E2 solid; margin: 20px; padding-bottom: 20px;}
+#last div:last-child{ border-bottom: 0px;}
+p#content-plann-p{color: #666; font-size: 1.4rem; line-height: 22px; padding-right: 6px; overflow : hidden; text-overflow: ellipsis;display: -webkit-box;-webkit-line-clamp: 3;-webkit-box-orient: vertical;}
+p#checkAll-market a{color: #c92826; font-size: 1.4rem; float: right;}
+.new-dynamic ul{padding-left: 15px;}
+.new-dynamic ul li{ font-size: 1.4rem; height: 26px; line-height: 26px; width: 220px; overflow : hidden; white-space: nowrap;text-overflow: ellipsis;}
+
+/*投资咨询-产业规划更多*/
+.content-plann-up{margin: 20px;}
+.content-plann-up #plann-data{border-bottom: 1px #E2E2E2 solid; padding-bottom: 5px;}
+.content-plann-up span{ color: #b3b3b3; font-size: 1.2rem; display: inline-block; margin-top: 5px;}
+.content-plann-up .plann-p{ font-size: 1.4rem; text-indent: 2em; line-height: 28px;}
+.content-plann-up img{ display: block; margin: 10px auto;  }
+.apply{border: 1px #fd6462 solid; text-align: center; padding: 25px; background: #fff6f6; color: #c92826; font-size: 2.2rem; font-weight: bold;}

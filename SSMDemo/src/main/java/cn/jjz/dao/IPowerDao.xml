@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.jjz.dao.IPowerDao">
+
+    <select id="ByUserIdgetAllPower" resultType="Power">
+/*    01.根据    用户编号  获取所有  【权限】*/
+      SELECT * FROM s_power
+      WHERE s_pid IN
+      (
+           SELECT s_pid FROM s_role_power
+           WHERE s_rid IN
+           (
+                SELECT s_rid FROM s_userinfo_role
+                WHERE   s_uid=#{s_uid}
+           )
+       )
+
+</select>
+    <select id="ZiMenu" resultType="Power">
+        SELECT *  FROM s_power WHERE s_pparent=#{s_pparent}
+    </select>
+
+    <select id="AllPower" resultType="Power">
+        SELECT  *  FROM s_power
+    </select>
+
+    <delete id="DeletePower" parameterType="int">
+        DELETE FROM s_role_power WHERE s_rid=#{s_rid} and s_pid=#{int s_pid}
+    </delete>
+
+    <insert id="AddPower">
+        INSERT INTO s_role_power(s_rid,s_pid) VALUE(#{s_rid},#{s_pid})
+    </insert>
+</mapper>

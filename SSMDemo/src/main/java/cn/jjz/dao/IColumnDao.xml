@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.jjz.dao.IColumnDao">
+
+    <select id="GetAllCol" resultType="IColumn">
+        select * from s_column
+    </select>
+    <select id="GetTopCol" resultType="IColumn">
+        select * from s_column WHERE s_cparent=#{s_cparent}
+        ORDER BY s_csort
+    </select>
+     <insert id="AddCol">
+         INSERT INTO s_column(s_ccode,s_cname,s_csort,s_cparent,s_cstatus,s_cremark)
+          VALUE(#{s_ccode},#{s_cname},#{s_csort},#{s_cparent},#{s_cstatus},#{s_cremark})
+
+     </insert>
+    <delete id="DeleteCol">
+        DELETE  FROM s_column WHERE s_cid=#{s_cid}
+    </delete>
+</mapper>

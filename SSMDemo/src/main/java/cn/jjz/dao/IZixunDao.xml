@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.jjz.dao.IZixunDao">
+
+    <resultMap id="IZixunMap" type="IZixun">
+        <id column="s_gnid" property="s_gnid"></id>
+        <result column="s_cid" property="s_cid"></result>
+        <result column="s_gncreator" property="s_gncreator"></result>
+        <result column="s_gntitle" property="s_gntitle"></result>
+        <result column="s_gnclick" property="s_gnclick"></result>
+        <result column="s_gnstatus" property="s_gnstatus"></result>
+        <result column="s_gnretimes" property="s_gnretimes"></result>
+        <result column="s_gnimage" property="s_gnimage"></result>
+        <result column="s_gnzhaiyao" property="s_gnzhaiyao"></result>
+        <result column="s_gnzhengwen" property="s_gnzhengwen"></result>
+        <result column="s_gncrux" property="s_gncrux"></result>
+        <result column="s_gntcolor" property="s_gntcolor"></result>
+        <association property="iColumn" javaType="IColumn" >
+            <id column="s_cid" property="s_cid"></id>
+            <result column="s_cname" property="s_cname"></result>
+
+        </association>
+        <association property="us" javaType="Us">
+            <id column="s_uid" property="s_uid"></id>
+            <result column="s_uname" property="s_uname"></result>
+        </association>
+    </resultMap>
+    <update id="UpdateZixun">
+        UPDATE s_zx SET
+        <if test="s_gntitle!= null">
+            s_gntitle = #{s_gntitle},
+        </if>
+        <if test="s_cid!= null">
+            s_cid = #{s_cid},
+        </if>
+        <if test="s_gnclick!= 0">
+            s_gnclick = #{s_gnclick},
+        </if>
+        <if test="s_gnstatus!= 0">
+            s_gnstatus = #{s_gnstatus},
+        </if>
+        <if test="s_gncreator!= null">
+            s_gncreator = #{s_gncreator},
+        </if>
+        <if test="s_gnretimes!= null">
+            s_gnretimes = #{s_gnretimes},
+        </if>
+        <if test="s_gnimage!= null">
+            s_gnimage = #{s_gnimage},
+        </if>
+        <if test="s_gnzhaiyao!= null">
+            s_gnzhaiyao = #{s_gnzhaiyao},
+        </if>
+        <if test="s_gnzhengwen!= null">
+            s_gnzhengwen = #{s_gnzhengwen},
+        </if>
+        <if test="s_gntcolor!=0">
+            s_gntcolor = #{s_gntcolor},
+        </if>
+        <if test="s_gncrux!= null">
+            s_gncrux = #{s_gncrux}
+        </if>
+
+        <where>
+            s_gnid=#{s_gnid}
+        </where>
+    </update>
+
+    <select id="GetAllZixun" resultMap="IZixunMap">
+        select * from s_zx z,s_column c,s_userinfo u
+        where z.s_cid=c.s_cid
+        and z.s_gncreator=u.s_uid
+        ORDER BY s_gnid DESC
+    </select>
+    <insert id="AddZixun">
+        INSERT into
+         s_zx(s_gntitle,s_cid,s_gnclick,s_gnstatus,s_gncreator,s_gnretimes,s_gnimage,s_gnzhaiyao,s_gnzhengwen,s_gntcolor,s_gncrux)
+         VALUE (#{s_gntitle},#{s_cid},#{s_gnclick},#{s_gnstatus},#{s_gncreator},#{s_gnretimes},#{s_gnimage},#{s_gnzhaiyao},#{s_gnzhengwen},#{s_gntcolor},#{s_gncrux})
+    </insert>
+    <delete id="DeleteZixun">
+        DELETE from s_zx where s_gnid=#{s_gnid}
+    </delete>
+     <select id="ByIdSelect" resultType="IZixun">
+         select * from s_zx WHERE s_gnid=#{s_gnid}
+     </select>
+    <select id="ByTitleSelectZixun" resultType="IZixun">
+        SELECT  *  from s_zx
+        <where>
+            <if test="s_gncrux !=null">
+                s_gncrux like '%' #{s_gncrux} '%'
+            </if>
+        </where>
+    </select>
+
+</mapper>
